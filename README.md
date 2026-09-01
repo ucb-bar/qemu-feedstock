@@ -1,11 +1,11 @@
-About qemu
-==========
+About qemu-feedstock
+====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qemu-feedstock/blob/main/LICENSE.txt)
 
 Home: https://qemu.org
 
 Package license: GPL-2.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ucb-bar-qemu-feedstock/blob/master/LICENSE.txt)
 
 Summary: QEMU is a generic and open source machine & userspace emulator and virtualizer.
 
@@ -40,7 +40,14 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/conda-forge/qemu-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/qemu-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
 </table>
 
 Current release info
@@ -60,31 +67,73 @@ conda config --add channels ucb-bar
 conda config --set channel_priority strict
 ```
 
-Once the `ucb-bar` channel has been enabled, `qemu` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install qemu
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install qemu
 ```
 
-It is possible to list all of the versions of `qemu` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add qemu
+# for installing globally
+pixi global install qemu
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `qemu` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search qemu --channel ucb-bar
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search qemu --channel ucb-bar
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search qemu --channel ucb-bar
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -96,6 +145,8 @@ mamba repoquery whoneeds qemu --channel ucb-bar
 # List dependencies of `qemu`:
 mamba repoquery depends qemu --channel ucb-bar
 ```
+
+</details>
 
 
 
@@ -112,7 +163,7 @@ merged, the recipe will be re-built and uploaded automatically to the
 everybody to install and use from the `ucb-bar` channel.
 Note that all branches in the conda-forge/qemu-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
