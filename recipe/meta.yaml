@@ -1,5 +1,5 @@
 {% set name = "qemu" %}
-{% set version = "5.0.0" %}
+{% set version = "8.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -21,7 +21,7 @@ source:
   #
   #url: https://github.com/qemu/qemu/archive/refs/tags/v{{ version }}.tar.gz
   url: https://download.qemu.org/qemu-{{ version }}.tar.xz
-  sha256: 2f13a92a0fa5c8b69ff0796b59b86b080bbb92ebad5d301a7724dd06b5e78cb6
+  sha256: bf00d2fa12010df8b0ade93371def58e632cb32a6bfdc5f5a0ff8e6a1fb1bf32
 
 build:
   number: 0
@@ -34,6 +34,8 @@ requirements:
     - {{ compiler('cxx') }}
     - sysroot_linux-64 2.17  # [linux64]  see below regarding kernel-headers
     - make
+    - meson
+    - ninja
     - pkg-config
     - bison
     - flex
