@@ -30,10 +30,12 @@ github_actions:
   store_build_artifacts: true
 provider:
   linux: github_actions
+  linux_aarch64: github_actions
   osx: None
   win: None
 os_version:
   linux_64: cos7
+  linux_aarch64: cos7
 channels:
   targets:
     - ["ucb-bar", "main"]
